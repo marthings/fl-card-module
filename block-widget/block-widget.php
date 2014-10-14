@@ -64,23 +64,6 @@ FLBuilder::register_module('FLBlockWidget', array(
                             )
                         )
                     ),
-                    'borders'     => array(
-                        'type'          => 'select',
-                        'label'         => __('Use borders', 'fl-builder'),
-                        'default'       => 'no',
-                        'options'       => array(
-                            'yes'         => __('Yes', 'fl-builder'),
-                            'no'         => __('No', 'fl-builder')
-                        ),
-                        'toggle'        => array(
-                            'yes'         => array(
-                                'fields'        => array('border_top','border_bottom','border_left','border_right','border_color'),
-                                'sections'      => array('content', 'text')
-                            ),
-                            'no'         => array(
-                            )
-                        )
-                    ),
                     'padding_top' => array(
                         'type'          => 'text',
                         'label'         => __( 'Padding top', 'fl-builder' ),
@@ -125,6 +108,23 @@ FLBuilder::register_module('FLBlockWidget', array(
                         'size'          => '3',
                         'placeholder'   => __( '0', 'fl-builder' ),
                         'description'   => __( 'px', 'fl-builder' ),
+                    ),
+                    'borders'     => array(
+                        'type'          => 'select',
+                        'label'         => __('Use borders', 'fl-builder'),
+                        'default'       => 'no',
+                        'options'       => array(
+                            'yes'         => __('Yes', 'fl-builder'),
+                            'no'         => __('No', 'fl-builder')
+                        ),
+                        'toggle'        => array(
+                            'yes'         => array(
+                                'fields'        => array('border_top','border_bottom','border_left','border_right','border_color'),
+                                'sections'      => array('content', 'text')
+                            ),
+                            'no'         => array(
+                            )
+                        )
                     ),
                     'border_top' => array(
                         'type'          => 'text',
