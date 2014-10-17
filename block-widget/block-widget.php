@@ -166,6 +166,10 @@ FLBuilder::register_module('FLBlockWidget', array(
                         'type'          => 'color',
                         'label'         => __('Border color', 'fl-builder')
                     ),
+                    'block_height'      => array(
+                        'type'          => 'text',
+                        'label'         => __('Block height', 'fl-builder')
+                    ),
                 )
             ),
             'background' => array(
@@ -183,7 +187,7 @@ FLBuilder::register_module('FLBlockWidget', array(
                         ),
                         'toggle'        => array(
                             'photo'         => array(
-                                'fields'        => array('bg_photo','bg_photo_color','photo_settings'),
+                                'fields'        => array('bg_photo','bg_photo_color','photo_settings','photo_repeat'),
                                 'sections'      => array('content', 'text')
                             ),
                             'color'         => array(
@@ -202,6 +206,15 @@ FLBuilder::register_module('FLBlockWidget', array(
                         'options'       => array(
                             'cover'         => __('Cover', 'fl-builder'),
                             'center'         => __('Center', 'fl-builder')
+                        )
+                    ),
+                    'photo_repeat'     => array(
+                        'type'          => 'select',
+                        'label'         => __('Repeat', 'fl-builder'),
+                        'default'       => 'no',
+                        'options'       => array(
+                            'yes'         => __('Yes', 'fl-builder'),
+                            'no'         => __('No', 'fl-builder')
                         )
                     ),
                     'bg_photo'      => array(

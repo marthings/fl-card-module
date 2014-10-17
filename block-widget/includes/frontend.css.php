@@ -3,6 +3,7 @@
 	if($settings->bg_layout == 'color') { ?>
 
 		background-color: #<?php echo $settings->bg_color; ?>;
+		color: #<?php echo $settings->bg_text_color; ?>;
 
 	<?php } elseif($settings->bg_layout == 'photo') { ?>
 
@@ -18,9 +19,20 @@
 
 		<?php } ?>
 
+		<?php if($settings->photo_repeat == 'yes') { ?>
+
+			background-repeat:repeat;
+
+		<?php } else { ?>
+
+			background-repeat:no-repeat;
+
+		<?php } ?>
+
 		color:#<?php echo $settings->bg_photo_color; ?>;
 
 	<?php } ?>
+	height:<?php echo $settings->block_height; ?>px;
 	border-radius: <?php echo $settings->border_radius; ?>px;
 	border-style: solid;
 	border-color: #<?php echo $settings->border_color; ?>;
