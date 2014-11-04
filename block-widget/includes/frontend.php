@@ -12,6 +12,5 @@
 
 ?>
 <div class="fl-example-text">
-	<?php echo $settings->background_color; ?>
     <?php echo $settings->editor_field; ?>
 </div>
