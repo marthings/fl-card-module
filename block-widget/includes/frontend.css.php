@@ -33,6 +33,7 @@
 
 	<?php } ?>
 	height:<?php echo $settings->block_height; ?>px;
+
 	border-radius: <?php echo $settings->border_radius; ?>px;
 	border-style: solid;
 	border-color: #<?php echo $settings->border_color; ?>;
@@ -44,4 +45,10 @@
 	padding-bottom: <?php echo $settings->padding_bottom; ?>px;
 	padding-left: <?php echo $settings->padding_left; ?>px;
 	padding-right: <?php echo $settings->padding_right; ?>px;
+}
+
+@media (max-width:767px) {
+	.fl-node-<?php echo $id; ?> .fl-module-content {
+		height:auto !important;
+	}
 }

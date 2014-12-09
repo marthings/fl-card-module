@@ -11,6 +11,6 @@
  */
 
 ?>
-<div class="fl-example-text">
+<div class="fl-block-widget">
     <?php echo $settings->editor_field; ?>
 </div>
