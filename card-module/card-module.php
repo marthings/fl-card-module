@@ -50,26 +50,9 @@ FLBuilder::register_module('FLCardModule', array(
     'title'   => __('Settings', 'fl-builder'),
     'sections'    => array(
       'style'       => array( // Section
-        'title'         => __('Style', 'fl-builder'), // Section Title
+        'title'         => __('Measures', 'fl-builder'), // Section Title
         'fields'        => array( // Section Fields
-          'padding'     => array(
-            'type'          => 'select',
-            'label'         => __('Use padding', 'fl-builder'),
-            'default'       => 'no',
-            'options'       => array(
-              'yes'         => __('Yes', 'fl-builder'),
-              'no'         => __('No', 'fl-builder')
-            ),
-            'toggle'        => array(
-              'yes'         => array(
-                'fields'        => array('padding_top','padding_bottom','padding_left','padding_right'),
-                'sections'      => array('content', 'text')
-              ),
-              'no'         => array(
-              )
-            )
-          ),
-          'padding_top' => array(
+          'padding_top'   => array(
             'type'          => 'text',
             'label'         => __( 'Padding top', 'fl-builder' ),
             'default'       => '0',
@@ -81,31 +64,31 @@ FLBuilder::register_module('FLCardModule', array(
           'padding_bottom' => array(
             'type'          => 'text',
             'label'         => __( 'Padding bottom', 'fl-builder' ),
-            'default'       => '10',
+            'default'       => '0',
             'maxlength'     => '2',
             'size'          => '3',
             'placeholder'   => __( '10', 'fl-builder' ),
             'description'   => __( 'px', 'fl-builder' ),
           ),
-          'padding_left' => array(
+          'padding_left'   => array(
             'type'          => 'text',
             'label'         => __( 'Padding left', 'fl-builder' ),
-            'default'       => '10',
+            'default'       => '0',
             'maxlength'     => '2',
             'size'          => '3',
             'placeholder'   => __( '10', 'fl-builder' ),
             'description'   => __( 'px', 'fl-builder' ),
           ),
-          'padding_right' => array(
+          'padding_right'  => array(
             'type'          => 'text',
             'label'         => __( 'Padding right', 'fl-builder' ),
-            'default'       => '10',
+            'default'       => '0',
             'maxlength'     => '2',
             'size'          => '3',
             'placeholder'   => __( '10', 'fl-builder' ),
             'description'   => __( 'px', 'fl-builder' ),
           ),
-          'border_radius' => array(
+          'border_radius'  => array(
             'type'          => 'text',
             'label'         => __( 'Border radius', 'fl-builder' ),
             'default'       => '0',
@@ -114,24 +97,51 @@ FLBuilder::register_module('FLCardModule', array(
             'placeholder'   => __( '0', 'fl-builder' ),
             'description'   => __( 'px', 'fl-builder' ),
           ),
+          'block_height'   => array(
+            'type'          => 'text',
+            'maxlength'     => '3',
+            'size'          => '3',
+            'label'         => __('Block height', 'fl-builder'),
+            'description'   => __( 'px', 'fl-builder' ),
+          )
+        )
+      ),
+      'boxshadow' => array( // Section
+        'title'     => __('Box shadow', 'fl-builder'),
+        'fields'    => array(
+          'shadow_units'   => array(
+            'type'          => 'text',
+            'label'         => __('Shadow setting', 'fl-builder'),
+            'placeholder'   => __('x,y,blur,spread','fl-builder'),
+            'description'   => __('Eg. 2px 2px 2px (no commas)','fl-builder'),
+          ),
+          'shadow_color'      => array(
+            'type'          => 'color',
+            'label'         => __('Shadow color', 'fl-builder')
+          )
+        )
+      ),
+      'borders' => array( // Section
+        'title'     => __('Borders', 'fl-builder'),
+        'fields'    => array(
           'borders'     => array(
             'type'          => 'select',
             'label'         => __('Use borders', 'fl-builder'),
             'default'       => 'no',
             'options'       => array(
               'yes'         => __('Yes', 'fl-builder'),
-              'no'         => __('No', 'fl-builder')
+              'no'          => __('No', 'fl-builder')
             ),
-            'toggle'        => array(
+            'toggle'       => array(
               'yes'         => array(
                 'fields'        => array('border_top','border_bottom','border_left','border_right','border_color'),
                 'sections'      => array('content', 'text')
               ),
-                'no'         => array(
+              'no'         => array(
               )
             )
           ),
-          'border_top' => array(
+          'border_top'    => array(
             'type'          => 'text',
             'label'         => __( 'Border top', 'fl-builder' ),
             'default'       => '0',
@@ -149,7 +159,7 @@ FLBuilder::register_module('FLCardModule', array(
             'placeholder'   => __( '0', 'fl-builder' ),
             'description'   => __( 'px', 'fl-builder' ),
           ),
-          'border_left' => array(
+          'border_left'   => array(
             'type'          => 'text',
             'label'         => __( 'Border left', 'fl-builder' ),
             'default'       => '0',
@@ -158,7 +168,7 @@ FLBuilder::register_module('FLCardModule', array(
             'placeholder'   => __( '0', 'fl-builder' ),
             'description'   => __( 'px', 'fl-builder' ),
           ),
-          'border_right' => array(
+          'border_right'  => array(
             'type'          => 'text',
             'label'         => __( 'Border right', 'fl-builder' ),
             'default'       => '0',
@@ -166,21 +176,17 @@ FLBuilder::register_module('FLCardModule', array(
             'size'          => '3',
             'placeholder'   => __( '0', 'fl-builder' ),
             'description'   => __( 'px', 'fl-builder' ),
-          ),
-          'border_color'      => array(
+            ),
+          'border_color'  => array(
             'type'          => 'color',
             'label'         => __('Border color', 'fl-builder')
           ),
-          'block_height'      => array(
-            'type'          => 'text',
-            'label'         => __('Block height', 'fl-builder')
-          )
         )
       ),
       'background' => array( // Section
         'title'     => __('Background', 'fl-builder'),
         'fields'    => array(
-          'bg_layout'     => array(
+          'bg_layout'       => array(
             'type'          => 'select',
             'label'         => __('Type', 'fl-builder'),
             'default'       => 'photo',
@@ -204,39 +210,39 @@ FLBuilder::register_module('FLCardModule', array(
               )
             )
           ),
-          'bg_photo'      => array(
+          'bg_photo'        => array(
             'type'          => 'photo',
             'label'         => __('Background Photo', 'fl-builder')
           ),
-          'photo_settings'     => array(
+          'photo_settings'  => array(
             'type'          => 'select',
             'label'         => __('Photo behaviour', 'fl-builder'),
             'default'       => 'center',
             'options'       => array(
               'cover'         => __('Cover', 'fl-builder'),
-              'none'         => __('Normal', 'fl-builder')
+              'none'          => __('Normal', 'fl-builder')
             )
           ),
-          'photo_repeat'     => array(
+          'photo_repeat'    => array(
             'type'          => 'select',
             'label'         => __('Repeat', 'fl-builder'),
             'default'       => 'no',
             'options'       => array(
-              'yes'         => __('Yes', 'fl-builder'),
-              'no'         => __('No', 'fl-builder')
+              'yes'           => __('Yes', 'fl-builder'),
+              'no'            => __('No', 'fl-builder')
             )
           ),
-          'bg_color'      => array(
+          'bg_color'        => array(
             'type'          => 'color',
             'label'         => __('Background Color', 'fl-builder'),
             'show_reset'    => true
           ),
-          'bg_text_color'      => array(
+          'bg_text_color'   => array(
             'type'          => 'color',
             'label'         => __('Text Color', 'fl-builder'),
             'show_reset'    => true
           ),
-          'bg_position'      => array(
+          'bg_position'     => array(
             'type'          => 'text',
             'label'         => __('Background position', 'fl-builder'),
             'placeholder'   => __('Example Left top, Right bottom, X Y', 'fl-builder'),
@@ -262,7 +268,7 @@ FLBuilder::register_module('FLCardModule', array(
             'default'       => 'no',
             'options'       => array(
               'yes'         => __('Yes', 'fl-builder'),
-              'no'         => __('No', 'fl-builder')
+              'no'          => __('No', 'fl-builder')
             )
           )
         )
